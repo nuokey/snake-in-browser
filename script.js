@@ -1,7 +1,7 @@
 let snake = [];
 snake.push([240, 240]);
-snake.push([0, 0]);
-snake.push([0, 0]);
+
+let apple = [30, 30]
 
 let canvas = document.getElementById('canvas');
 
@@ -19,6 +19,9 @@ function draw() {
         // console.log(snake[i][0], snake[i][1]);
         ctx.fillRect(snake[i][0], snake[i][1], 10, 10);
     }
+
+    ctx.fillStyle = 'rgb(255, 0, 0)';
+    ctx.fillRect(apple[0], apple[1], 20, 20);
 }
 
 function move() {
@@ -62,8 +65,19 @@ function play(e) {
     }
 }
 
+function appleUpdate() {
+    let distance = Math.sqrt((apple[0] + 10 - snake[0][0] - 5)**2 + (apple[1] + 10 - snake[0][1])**2 - 5);
+    if (distance <= 15 ) {
+        snake.push([snake[0][0], snake[0][1]]);
+        apple[0] = Math.random() * (canvas.width - 20);
+        apple[1] = Math.random() * (canvas.height - 20);
+    }
+}
+
 function update() {
     move();
+    appleUpdate();
+
     draw();
 }
 
