@@ -4,6 +4,7 @@ snake.push([240, 240]);
 let apple = [30, 30]
 
 let canvas = document.getElementById('canvas');
+// let up = document.getElementById('up');
 
 canvas.width = screen.width;
 canvas.height = screen.height * 0.6;
@@ -11,6 +12,10 @@ canvas.height = screen.height * 0.6;
 let speedx = 1;
 let speedy = 0;
 let speed = 5;
+
+// up.onlcick = function() {
+//     turnUp();
+// };
 
 function draw() {
     let ctx = canvas.getContext('2d');

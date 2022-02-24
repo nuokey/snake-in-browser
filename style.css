@@ -30,7 +30,7 @@ canvas {
     border: 1px solid black;
 }
 
-.snakecontrol button {
+.snakecontrol input {
     background-color: white;
     border: 1px solid black;
     width: 100%;
