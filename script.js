@@ -1,7 +1,10 @@
 let snake = [];
-snake.push([240, 240]);
 
-let apple = [30, 30]
+for (let i = 0; i < 5000; i++) {
+    snake.push([240, 240]);
+}
+
+let apple = [30, 30];
 
 let canvas = document.getElementById('canvas');
 // let up = document.getElementById('up');
@@ -11,14 +14,16 @@ canvas.height = screen.height * 0.7;
 
 let speedx = 1;
 let speedy = 0;
-let speed = 5;
+let speed = 8;
 
 // up.onlcick = function() {
 //     turnUp();
 // };
 
+let ctx = canvas.getContext('2d');
+
 function draw() {
-    let ctx = canvas.getContext('2d');
+    
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -133,6 +138,8 @@ function update() {
 
     draw();
 }
+
+console.log(ctx.getImageData(0,0,1,1))
 
 setInterval(update, 10);
 
